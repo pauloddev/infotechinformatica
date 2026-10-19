@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Infotech Informática | Celular no boleto e conserto em Campina Grande do Sul</title>
-<meta name="description" content="Celular Xiaomi, Motorola e Samsung no boleto em até 18x, com entrada facilitada. Conserto de celular (iPhone e Android) e de computador, e acessórios. Dentro do Boni, em Campina Grande do Sul – PR.">
+<meta name="description" content="Celular Xiaomi, Motorola e Samsung no boleto em até {{boleto.parcelas}}x, com entrada facilitada. Conserto de celular (iPhone e Android) e de computador, e acessórios. Dentro do Boni, em Campina Grande do Sul – PR.">
 <meta name="theme-color" content="#050706">
 <link rel="canonical" href="https://www.infotechinformatica.com/">
 <meta name="robots" content="index, follow">
@@ -12,33 +12,12 @@
 <meta property="og:locale" content="pt_BR">
 <meta property="og:site_name" content="Infotech Informática">
 <meta property="og:title" content="Infotech Informática | Celular no boleto e conserto">
-<meta property="og:description" content="Xiaomi, Motorola e Samsung em até 18x no boleto, conserto de celular e computador, e acessórios. Dentro do Boni, em Campina Grande do Sul – PR.">
+<meta property="og:description" content="Xiaomi, Motorola e Samsung em até {{boleto.parcelas}}x no boleto, conserto de celular e computador, e acessórios. Dentro do Boni, em Campina Grande do Sul – PR.">
 <meta property="og:url" content="https://www.infotechinformatica.com/">
 <meta property="og:image" content="https://www.infotechinformatica.com/img/fachada.webp">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ElectronicsStore",
-  "name": "Infotech Informática",
-  "url": "https://www.infotechinformatica.com/",
-  "logo": "https://www.infotechinformatica.com/logo.png",
-  "image": "https://www.infotechinformatica.com/img/fachada.webp",
-  "telephone": "+55 41 99235-1553",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "R. Annibale Ferrarini, 1117 – Dentro do Boni",
-    "addressLocality": "Campina Grande do Sul",
-    "addressRegion": "PR",
-    "postalCode": "83430-000",
-    "addressCountry": "BR"
-  },
-  "openingHoursSpecification": [
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"], "opens": "10:00", "closes": "20:00"},
-    {"@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "10:00", "closes": "18:00"}
-  ],
-  "sameAs": ["https://www.instagram.com/infotechinformaticacgs/"]
-}
+{{{jsonLd}}}
 </script>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="icon" href="favicon.ico" sizes="any">
@@ -479,14 +458,14 @@ a{color:inherit}
       <a href="#boleto">Celular no boleto</a>
       <a href="#conserto">Conserto</a>
       <a href="#acessorios">Acessórios</a>
-      <a href="https://c8.rein.net.br/infotech_1353/buscadorProdutos.php" target="_blank" rel="noopener">Sistema</a>
-      <a href="https://vendas.flexfone.com.br/super-compra" target="_blank" rel="noopener">Flexfone</a>
+      <a href="{{links.sistema}}" target="_blank" rel="noopener">Sistema</a>
+      <a href="{{links.flexfone}}" target="_blank" rel="noopener">Flexfone</a>
       <a href="#clientes">Clientes</a>
       <a href="#onde">Onde fica</a>
-      <a class="nav-hot" href="https://www.payjoy.com/br/pfsh-valueprop" target="_blank" rel="noopener">Simule aqui</a>
+      <a class="nav-hot" href="{{links.payjoy}}" target="_blank" rel="noopener">Simule aqui</a>
     </nav>
-    <a class="btn btn-green" href="https://wa.me/5541992351553?text=Quero%20meu%20celular%20no%20boleto" target="_blank" rel="noopener">
-      <svg aria-hidden="true"><use href="#i-wa"/></svg><span>(41) 99235-1553</span><span class="sr-only">WhatsApp</span>
+    <a class="btn btn-green" href="{{wa.boleto}}" target="_blank" rel="noopener">
+      <svg aria-hidden="true"><use href="#i-wa"/></svg><span>{{telDisplay}}</span><span class="sr-only">WhatsApp</span>
     </a>
   </div>
 </header>
@@ -500,14 +479,14 @@ a{color:inherit}
     <div class="lg:col-span-7 flex flex-col gap-6 reveal">
       <p class="eyebrow">Tecnologia para o seu dia a dia</p>
       <h1 id="h-hero" class="display h1">Celular <span class="grad-text nb">no boleto</span>, conserto e acessório. Tudo num lugar só.</h1>
-      <p class="lead" style="max-width:56ch">Xiaomi, Motorola e Samsung em até 18x no boleto, sem cartão de crédito. Conserto de celular (iPhone e Android) e de computador. E o carregador ou a película que faltava. Tudo no mesmo balcão, enquanto você faz as compras em Campina Grande do Sul.</p>
+      <p class="lead" style="max-width:56ch">Xiaomi, Motorola e Samsung em até {{boleto.parcelas}}x no boleto, sem cartão de crédito. Conserto de celular (iPhone e Android) e de computador. E o carregador ou a película que faltava. Tudo no mesmo balcão, enquanto você faz as compras em Campina Grande do Sul.</p>
       <div class="flex flex-col sm:flex-row gap-4">
-        <a class="btn btn-green btn-block-m" href="https://wa.me/5541992351553?text=Quero%20meu%20celular%20no%20boleto" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quero meu celular no boleto</a>
-        <a class="btn btn-line btn-block-m" href="https://wa.me/5541992351553?text=Pedir%20or%C3%A7amento%20do%20conserto" target="_blank" rel="noopener">Pedir orçamento do conserto</a>
+        <a class="btn btn-green btn-block-m" href="{{wa.boleto}}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quero meu celular no boleto</a>
+        <a class="btn btn-line btn-block-m" href="{{wa.conserto}}" target="_blank" rel="noopener">Pedir orçamento do conserto</a>
       </div>
       <div class="hero-meta">
-        <span><i class="dot js-dot" aria-hidden="true"></i><span class="js-status">Seg a sáb 10h–20h · Dom 10h–18h</span></span>
-        <span><svg width="18" height="18" aria-hidden="true"><use href="#i-pin"/></svg>R. Annibale Ferrarini, 1117 – Dentro do Boni</span>
+        <span><i class="dot js-dot" aria-hidden="true"></i><span class="js-status">{{horarioResumo}}</span></span>
+        <span><svg width="18" height="18" aria-hidden="true"><use href="#i-pin"/></svg>{{endereco}}</span>
       </div>
     </div>
 
@@ -522,8 +501,8 @@ a{color:inherit}
           <figcaption class="name-tag"><b>Junior Rosa Caria</b><span>CEO da Infotech</span></figcaption>
         </figure>
         </div>
-        <div class="ticket ticket-h" role="note" aria-label="Celular no boleto em até 18x com entrada facilitada">
-          <div class="t-left"><span class="ticket-top"><span>BOLETO</span></span><div class="big grad-text"><small>até</small>18x</div></div>
+        <div class="ticket ticket-h" role="note" aria-label="Celular no boleto em até {{boleto.parcelas}}x com entrada facilitada">
+          <div class="t-left"><span class="ticket-top"><span>BOLETO</span></span><div class="big grad-text"><small>até</small>{{boleto.parcelas}}x</div></div>
           <div class="t-right">
             <div class="entry" style="margin-top:0">ENTRADA FACILITADA</div>
             <div class="brands-mini">Xiaomi · Motorola · Samsung</div>
@@ -541,7 +520,7 @@ a{color:inherit}
 <section class="strip on-green circuit" aria-label="Oferta do boleto" data-rail="Oferta">
   <div class="wrap flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-8">
     <span class="stripes hidden lg:inline-block" aria-hidden="true"></span>
-    <p class="strip-txt lg:flex-1">CELULAR NO BOLETO, EM ATÉ 18X, ENTRADA FACILITADA</p>
+    <p class="strip-txt lg:flex-1">CELULAR NO BOLETO, EM ATÉ {{boleto.parcelas}}X, ENTRADA FACILITADA</p>
     <div class="flex flex-col gap-1">
       <span class="tags">XIAOMI · MOTOROLA · SAMSUNG</span>
       <span class="tags" style="font-weight:600;letter-spacing:0">Consulte as condições para aprovação.</span>
@@ -581,7 +560,7 @@ a{color:inherit}
       <div class="lg:col-span-7 flex flex-col gap-8 reveal">
         <div class="flex flex-col gap-4">
           <p class="eyebrow">Sem cartão de crédito · sem consulta ao SPC/Serasa</p>
-          <h2 id="h-boleto" class="display h2 boleto-h">CELULAR NO BOLETO, EM ATÉ <span class="x18">18X</span>, ENTRADA FACILITADA</h2>
+          <h2 id="h-boleto" class="display h2 boleto-h">CELULAR NO BOLETO, EM ATÉ <span class="x18">{{boleto.parcelas}}X</span>, ENTRADA FACILITADA</h2>
         </div>
         <div class="brand-row" aria-label="Marcas no boleto: Xiaomi, Motorola e Samsung">
           <span>XIAOMI<small>Redmi e POCO inclusos</small></span><span class="sep" aria-hidden="true">/</span>
@@ -593,7 +572,7 @@ a{color:inherit}
       <div class="lg:col-span-5 reveal">
         <figure class="boleto-art" style="margin:0">
           <img src="img/boleto-celulares.webp" width="1100" height="1088" alt="Três celulares Xiaomi POCO, nas cores cinza, amarela e branca, na frente de um boleto bancário impresso" loading="lazy">
-          <span class="sticker" aria-hidden="true"><b>18x</b><span>no boleto</span></span>
+          <span class="sticker" aria-hidden="true"><b>{{boleto.parcelas}}x</b><span>no boleto</span></span>
         </figure>
       </div>
     </div>
@@ -604,10 +583,10 @@ a{color:inherit}
         <div class="facts">
           <div class="fact"><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>Sem cartão de crédito</b><span>Você paga as parcelas no boleto, mês a mês, sem usar limite de cartão.</span></div></div>
           <div class="fact"><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>Sem consulta ao SPC/Serasa</b><span>A análise é feita na própria loja, com aprovação rápida.</span></div></div>
-          <div class="fact"><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>Em até 18x</b><span>Parcelas no boleto, com valor definido pelo modelo escolhido.</span></div></div>
+          <div class="fact"><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>Em até {{boleto.parcelas}}x</b><span>Parcelas no boleto, com valor definido pelo modelo escolhido.</span></div></div>
           <div class="fact"><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>Entrada facilitada</b><span>Entrada que cabe no bolso, definida pelo aparelho escolhido.</span></div></div>
           <div class="fact"><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>Parcelamento pela PayJoy</b><span>Financiadora parceira da loja. Dá para simular a pré-aprovação pelo celular.</span></div></div>
-          <div class="fact"><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>Brinde na compra</b><span>Capa, película e fone Bluetooth, conforme a promoção vigente.</span></div></div>
+          <div class="fact"><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>Brinde na compra</b><span>{{boleto.brinde}}</span></div></div>
           <div class="fact"><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>Só três marcas</b><span>Xiaomi, Motorola e Samsung. Outras marcas: pergunte pelo cartão.</span></div></div>
           <div class="fact"><svg aria-hidden="true"><use href="#i-check"/></svg><div><b>Tudo às claras</b><span>Você vê parcela, entrada e valor total antes de fechar.</span></div></div>
         </div>
@@ -619,11 +598,11 @@ a{color:inherit}
         <ol class="steps">
           <li><div><b>Escolhe o aparelho</b><span>Na vitrine da loja ou pelo WhatsApp. Só Xiaomi, Motorola e Samsung.</span></div></li>
           <li><div><b>Faz a análise</b><span>Rápida, feita no balcão, sem consulta ao SPC/Serasa.</span></div></li>
-          <li><div><b>Paga a entrada e leva</b><span>Sai com o celular e paga o restante no boleto, em até 18x.</span></div></li>
+          <li><div><b>Paga a entrada e leva</b><span>Sai com o celular e paga o restante no boleto, em até {{boleto.parcelas}}x.</span></div></li>
         </ol>
         <div class="perf" aria-hidden="true"></div>
         <div class="flex flex-col gap-4">
-          <a class="btn btn-green" href="https://wa.me/5541992351553?text=Quero%20meu%20celular%20no%20boleto" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quero meu celular no boleto</a>
+          <a class="btn btn-green" href="{{wa.boleto}}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quero meu celular no boleto</a>
           <a class="btn btn-line" href="#simule">Simular a pré-aprovação antes</a>
         </div>
         <div class="barcode" aria-hidden="true"></div>
@@ -640,7 +619,7 @@ a{color:inherit}
         <div>
           <p class="eyebrow" style="color:var(--g1)">Já saíram daqui</p>
           <ul class="models">
-            <li>Galaxy A07</li><li>Galaxy A17</li><li>Galaxy A17 5G</li><li>moto g06</li><li>moto g17</li><li>Redmi A5</li><li>Redmi 15C</li><li>POCO C85</li>
+            {{#boleto.modelos}}<li>{{.}}</li>{{/boleto.modelos}}
           </ul>
         </div>
         <p class="muted" style="margin:0;font-size:15px">Modelos que clientes já levaram no boleto. Preço e disponibilidade pelo WhatsApp.</p>
@@ -658,7 +637,7 @@ a{color:inherit}
       <h2 id="h-simule" class="display h2">Simule o boleto antes de sair de casa.</h2>
       <p class="lead">Faça a simulação pelo celular e chegue na loja sabendo se teve pré-aprovação. Consulte as condições para aprovação.</p>
     </div>
-    <a class="action action-green action-wide lg:col-span-7 reveal" href="https://www.payjoy.com/br/pfsh-valueprop" target="_blank" rel="noopener">
+    <a class="action action-green action-wide lg:col-span-7 reveal" href="{{links.payjoy}}" target="_blank" rel="noopener">
       <svg class="bg-mark" aria-hidden="true" style="color:var(--ink)"><use href="#i-power"/></svg>
       <span><span class="label">SIMULE AQUI</span><span class="sub">(LINK PRÉ-APROVAÇÃO)</span></span>
       <span class="go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
@@ -684,23 +663,15 @@ a{color:inherit}
           <div>
             <h3 class="panel-h"><svg aria-hidden="true"><use href="#i-phone"/></svg>Celulares e tablets</h3>
             <ul class="bands">
-              <li class="band"><span>Reparo em celulares</span></li>
-              <li class="band"><span>Reparo em tablets</span></li>
-              <li class="band"><span>Troca de tela</span></li>
-              <li class="band"><span>Conectores e baterias</span></li>
-              <li class="band"><span>Software e formatação</span></li>
-              <li class="band"><span>Reparo em placas</span></li>
+              {{#conserto.celulares}}<li class="band"><span>{{.}}</span></li>
+              {{/conserto.celulares}}
             </ul>
           </div>
           <div>
             <h3 class="panel-h"><svg aria-hidden="true"><use href="#i-laptop"/></svg>Informática</h3>
             <ul class="bands">
-              <li class="band"><span>Formatação</span></li>
-              <li class="band"><span>SSDs, HDs e pen drives</span></li>
-              <li class="band"><span>Computadores e notebooks</span></li>
-              <li class="band"><span>Troca de tela e teclados (notebook)</span></li>
-              <li class="band"><span>Roteadores e repetidores</span></li>
-              <li class="band"><span>Redes LAN e Wi-Fi</span></li>
+              {{#conserto.informatica}}<li class="band"><span>{{.}}</span></li>
+              {{/conserto.informatica}}
             </ul>
           </div>
         </div>
@@ -709,7 +680,7 @@ a{color:inherit}
           <div><b>Prazo dito na hora</b><p>O tempo sem o aparelho é combinado já no orçamento.</p></div>
           <div><b>Garantia no serviço</b><p>Serviço com garantia, explicada no orçamento.</p></div>
         </div>
-        <div><a class="btn btn-green btn-block-m" href="https://wa.me/5541992351553?text=Pedir%20or%C3%A7amento%20do%20conserto" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento do conserto pelo WhatsApp</a></div>
+        <div><a class="btn btn-green btn-block-m" href="{{wa.conserto}}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Pedir orçamento do conserto pelo WhatsApp</a></div>
       </div>
       <figure class="side-photo lg:col-span-5 reveal" style="margin:0;min-height:440px">
         <img src="img/painel-servicos.webp" width="787" height="1400" alt="Painel verde de serviços na parede da Infotech, com faixas listando reparo em celulares, troca de tela, formatação, redes LAN e Wi-Fi, acima do balcão" loading="lazy">
@@ -730,44 +701,18 @@ a{color:inherit}
       </div>
       <div class="lg:col-span-5 flex flex-col gap-4">
         <p class="lead" style="color:var(--ink)">Medo de acessório que estraga logo? Tem mais de uma marca e mais de uma linha para cada item, e a gente diz qual aguenta mais uso.</p>
-        <div><a class="btn btn-ink btn-block-m" href="https://wa.me/5541992351553?text=Perguntar%20se%20tem%20o%20acess%C3%B3rio" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Perguntar se tem o acessório</a></div>
+        <div><a class="btn btn-ink btn-block-m" href="{{wa.acessorio}}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Perguntar se tem o acessório</a></div>
       </div>
     </div>
 
     <div class="bento reveal">
-      <article class="tile big">
-        <img src="img/audio.webp" width="1400" height="787" alt="Caixa de som com microfones, Amazon Echo Dot, Echo Pop, Echo Spot e headphones JBL expostos no balcão" loading="lazy">
-        <div class="cap"><span class="k">Áudio e casa</span><h3>Caixinhas de som, headsets e Echo</h3><p>Caixinhas de som, headsets, fones Bluetooth e assistentes Alexa para a sala.</p></div>
+      {{#acessorios}}
+      <article class="tile{{#destaque}} big{{/destaque}}">
+        <img src="{{foto.src}}" width="{{foto.w}}" height="{{foto.h}}" alt="{{descricao_foto}}" loading="lazy">
+        <div class="cap"><span class="k">{{categoria}}</span><h3>{{titulo}}</h3>{{#texto}}<p>{{texto}}</p>{{/texto}}</div>
       </article>
-      <article class="tile">
-        <img src="img/capas.webp" width="1280" height="720" alt="Parede com dezenas de capas de celular coloridas penduradas" loading="lazy">
-        <div class="cap"><span class="k">Proteção</span><h3>Capas</h3><p>Para Samsung, Motorola, Xiaomi e iPhone.</p></div>
-      </article>
-      <article class="tile">
-        <img src="img/peliculas.webp" width="1280" height="720" alt="Parede de películas 3D e de privacidade organizadas por modelo" loading="lazy">
-        <div class="cap"><span class="k">Proteção</span><h3>Películas</h3><p>3D, de vidro e de privacidade.</p></div>
-      </article>
-      <article class="tile">
-        <img src="img/cabos.webp" width="1280" height="720" alt="Displays com cabos de dados USB coloridos e fones com fio no balcão" loading="lazy">
-        <div class="cap"><span class="k">Energia</span><h3>Cabos e carregadores</h3><p>Cabos, carregadores, carregadores veiculares e adaptadores.</p></div>
-      </article>
-      <article class="tile">
-        <img src="img/fones.webp" width="1280" height="720" alt="Prateleira com fones de ouvido com fio e power banks embalados" loading="lazy">
-        <div class="cap"><span class="k">Áudio e energia</span><h3>Fones e power banks</h3><p>Fones com fio e baterias portáteis.</p></div>
-      </article>
-      <article class="tile">
-        <img src="img/gamer-vestiveis.webp" width="1280" height="720" alt="Vitrine com smartwatches, controle de videogame sem fio e mouses gamer" loading="lazy">
-        <div class="cap"><span class="k">Gamer e vestíveis</span><h3>Controles e smartwatches</h3><p>Controles de videogame, teclados gamers e smartwatches.</p></div>
-      </article>
-      <article class="tile">
-        <img src="img/informatica-rede.webp" width="1280" height="720" alt="Vitrine com mouses, roteadores TP-Link, conversor digital e Fire TV Stick" loading="lazy">
-        <div class="cap"><span class="k">Conectividade, casa e TV</span><h3>Mouses, roteadores e TV</h3><p>Mouses, roteadores, chips, controles de TV e eletrônicos em geral.</p></div>
-      </article>
-      <article class="tile">
-        <img src="img/suportes.webp" width="1280" height="720" alt="Prateleira de suportes veiculares para celular de várias marcas" loading="lazy">
-        <div class="cap"><span class="k">Suportes</span><h3>Suportes</h3><p>Veicular, de moto e de mesa.</p></div>
-      </article>
-      <a class="tile tile-cta" href="https://wa.me/5541992351553?text=Perguntar%20se%20tem%20o%20acess%C3%B3rio" target="_blank" rel="noopener">
+      {{/acessorios}}
+      <a class="tile tile-cta" href="{{wa.acessorio}}" target="_blank" rel="noopener">
         <span class="q">Não achou aqui? <span class="grad-text">Pergunta.</span></span>
         <span class="a"><svg aria-hidden="true"><use href="#i-wa"/></svg>Perguntar se tem o acessório</span>
       </a>
@@ -779,7 +724,7 @@ a{color:inherit}
 <!-- 7b. SISTEMA INFOTECH — preto -->
 <section id="sistema" data-rail="Sistema" class="sec-tight on-dark circuit" aria-label="Sistema Infotech">
   <div class="wrap reveal">
-    <a class="sys-btn" href="https://c8.rein.net.br/infotech_1353/buscadorProdutos.php" target="_blank" rel="noopener">
+    <a class="sys-btn" href="{{links.sistema}}" target="_blank" rel="noopener">
       <svg class="sys-power" aria-hidden="true"><use href="#i-power"/></svg>
       <span class="sys-name">SISTEMA INFOTECH</span>
       <span class="go" aria-hidden="true"><svg><use href="#i-arrow"/></svg></span>
@@ -799,30 +744,16 @@ a{color:inherit}
       <p class="lead lg:col-span-5">Gente de Campina Grande do Sul e região que escolheu o aparelho, passou na análise e saiu com ele na mão. Fotos reais, tiradas na loja.</p>
     </div>
     <div class="bento wall reveal">
-      <figure class="tile big" style="margin:0">
-        <img src="img/cliente-casal.webp" width="1050" height="1400" alt="Junior, da Infotech, ao lado de um casal de clientes segurando um celular rosa e a caixa de um fone Redmi" loading="lazy">
-        <figcaption class="cap"><span class="k">Cliente Infotech</span><h3>Celular novo e fone Bluetooth de brinde</h3></figcaption>
+      {{#clientes}}
+      <figure class="tile{{#destaque}} big{{/destaque}}" style="margin:0">
+        <img src="{{foto.src}}" width="{{foto.w}}" height="{{foto.h}}" alt="{{descricao_foto}}" loading="lazy">
+        <figcaption class="cap"><span class="k">{{marca}}</span><h3>{{titulo}}</h3></figcaption>
       </figure>
-      <figure class="tile" style="margin:0">
-        <img src="img/cliente-galaxy-a17.webp" width="1050" height="1400" alt="Cliente sorrindo com a caixa de um Samsung Galaxy A17 ao lado de Junior" loading="lazy">
-        <figcaption class="cap"><span class="k">Samsung</span><h3>Galaxy A17</h3></figcaption>
-      </figure>
-      <figure class="tile" style="margin:0">
-        <img src="img/cliente-poco-c85.webp" width="1160" height="872" alt="Cliente com a caixa amarela de um POCO C85 no balcão da Infotech" loading="lazy">
-        <figcaption class="cap"><span class="k">Xiaomi</span><h3>POCO C85</h3></figcaption>
-      </figure>
-      <figure class="tile" style="margin:0">
-        <img src="img/cliente-redmi-a5.webp" width="1050" height="1400" alt="Cliente segurando a caixa de um Redmi A5 e uma capa, ao lado de Junior na entrada da loja" loading="lazy">
-        <figcaption class="cap"><span class="k">Xiaomi</span><h3>Redmi A5 + capa</h3></figcaption>
-      </figure>
-      <figure class="tile" style="margin:0">
-        <img src="img/cliente-galaxy-a07.webp" width="1296" height="972" alt="Cliente com a caixa de um Samsung Galaxy A07 na calçada do Boni, ao lado de Junior" loading="lazy">
-        <figcaption class="cap"><span class="k">Samsung</span><h3>Galaxy A07</h3></figcaption>
-      </figure>
+      {{/clientes}}
     </div>
     <div class="quote reveal">
       <p class="quote-txt">Veja mais clientes saindo com o celular novo no Instagram da loja.</p>
-      <a class="btn btn-line btn-block-m" href="https://www.instagram.com/infotechinformaticacgs/" target="_blank" rel="noopener">Ver no @infotechinformaticacgs</a>
+      <a class="btn btn-line btn-block-m" href="{{instagramUrl}}" target="_blank" rel="noopener">Ver no @{{instagram}}</a>
     </div>
   </div>
 </section>
@@ -837,14 +768,9 @@ a{color:inherit}
       <p class="muted" style="margin:0">Não achou a sua? Manda no WhatsApp, que a resposta vem de quem trabalha na loja.</p>
     </div>
     <div class="faq lg:col-span-8 reveal">
-      <details open><summary>O boleto parcelado tem juros altos? É muita burocracia?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>Antes de fechar, você vê o valor de cada parcela e o total, e decide com os números na mão. A análise é feita no balcão, com aprovação rápida e sem consulta ao SPC/Serasa.</p></div></details>
-      <details><summary>O que vão me pedir para aprovar?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>A análise é feita no balcão, sem consulta ao SPC/Serasa. Para saber o que levar, chame no WhatsApp antes de ir. Se quiser chegar já sabendo, faça a simulação de pré-aprovação no botão “Simule aqui”. Consulte as condições para aprovação.</p></div></details>
-      <details><summary>Quais celulares saem no boleto?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>Somente Xiaomi (incluindo Redmi e POCO), Motorola e Samsung, em até 18x com entrada facilitada. Para outras marcas, pergunte pelas outras formas de pagamento, como o cartão.</p></div></details>
-      <details><summary>E se o conserto não ficar bom, ou piorar?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>Primeiro vem o diagnóstico e o orçamento: você sabe o que tem e quanto custa antes de qualquer peça ser trocada. E o serviço tem garantia.</p></div></details>
-      <details><summary>Quanto tempo fico sem o meu celular?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>Depende do serviço, e o prazo é combinado já no orçamento. Enquanto isso, você faz suas compras no Boni.</p></div></details>
-      <details><summary>Acessório barato não estraga logo?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>Tem mais de uma linha para cada item, da mais em conta à mais reforçada, e a gente fala a diferença na hora.</p></div></details>
-      <details><summary>Celular seminovo não é furada?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>Você liga e testa no balcão antes de pagar: tela, câmera, bateria e sinal.</p></div></details>
-      <details><summary>Aceita cartão?<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>Sim. Além do boleto, dá para parcelar no cartão.</p></div></details>
+      {{#faq}}
+      <details{{#aberta}} open{{/aberta}}><summary>{{pergunta}}<span class="pm" aria-hidden="true"></span></summary><div class="ans"><p>{{resposta}}</p></div></details>
+      {{/faq}}
     </div>
   </div>
 </section>
@@ -856,33 +782,29 @@ a{color:inherit}
     <div class="place lg:col-span-5 reveal">
       <p class="eyebrow" style="color:var(--g1)">Onde fica</p>
       <h2 id="h-onde" class="boni"><span class="grad-text">Dentro</span><br>do Boni</h2>
-      <address>R. Annibale Ferrarini, 1117 – Dentro do Boni, Campina Grande do Sul – PR, 83430-000</address>
-      <span class="status js-status-pill"><i class="dot" aria-hidden="true"></i><span class="js-status-2">Seg a sáb 10h–20h · Dom 10h–18h</span></span>
+      <address>{{enderecoCompleto}}</address>
+      <span class="status js-status-pill"><i class="dot" aria-hidden="true"></i><span class="js-status-2">{{horarioResumo}}</span></span>
       <table class="hours" aria-label="Horário de funcionamento">
         <tbody>
-          <tr data-d="1"><td>Segunda-feira</td><td>10h às 20h</td></tr>
-          <tr data-d="2"><td>Terça-feira</td><td>10h às 20h</td></tr>
-          <tr data-d="3"><td>Quarta-feira</td><td>10h às 20h</td></tr>
-          <tr data-d="4"><td>Quinta-feira</td><td>10h às 20h</td></tr>
-          <tr data-d="5"><td>Sexta-feira</td><td>10h às 20h</td></tr>
-          <tr data-d="6"><td>Sábado</td><td>10h às 20h</td></tr>
-          <tr data-d="0"><td>Domingo</td><td>10h às 18h</td></tr>
+          {{#horarioTabela}}
+          <tr data-d="{{d}}"{{#fechado}} class="closed"{{/fechado}}><td>{{nome}}</td><td>{{texto}}</td></tr>
+          {{/horarioTabela}}
         </tbody>
       </table>
       <div class="flex flex-col gap-4">
-        <a class="btn btn-green" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.%20Annibale%20Ferrarini%2C%201117%2C%20Campina%20Grande%20do%20Sul%20-%20PR%2C%2083430-000" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Ver rota até a loja</a>
-        <a class="btn btn-line" href="https://wa.me/5541992351553?text=Ol%C3%A1%2C%20Infotech!%20Estou%20indo%20at%C3%A9%20a%20loja." target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Avisar que estou indo</a>
+        <a class="btn btn-green" href="https://www.google.com/maps/dir/?api=1&amp;destination={{mapsQuery}}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Ver rota até a loja</a>
+        <a class="btn btn-line" href="{{wa.indo}}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Avisar que estou indo</a>
       </div>
     </div>
     <div class="map-frame lg:col-span-7 reveal">
-      <div class="map-fallback" aria-hidden="true"><span class="st st1">R. Annibale Ferrarini</span><span class="blk">BONI</span></div>
-      <iframe title="Mapa: Infotech Informática, R. Annibale Ferrarini, 1117 – Dentro do Boni, Campina Grande do Sul – PR" src="https://maps.google.com/maps?q=R.%20Annibale%20Ferrarini%2C%201117%2C%20Campina%20Grande%20do%20Sul%20-%20PR%2C%2083430-000&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <div class="map-fallback" aria-hidden="true"><span class="st st1">{{rua}}</span><span class="blk">BONI</span></div>
+      <iframe title="Mapa: Infotech Informática, {{endereco}}, {{cidade}} – {{uf}}" src="https://maps.google.com/maps?q={{mapsQuery}}&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       <div class="pin" aria-hidden="true">
         <span class="pin-pulse"></span><span class="pin-pulse d2"></span><span class="pin-shadow"></span>
         <span class="pin-body"><span class="pin-head"></span></span>
       </div>
       <div class="map-tag"><span>Infotech · Dentro do Boni</span></div>
-      <a class="btn btn-ink map-open" href="https://www.google.com/maps/search/?api=1&amp;query=R.%20Annibale%20Ferrarini%2C%201117%2C%20Campina%20Grande%20do%20Sul%20-%20PR%2C%2083430-000" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Abrir no Google Maps</a>
+      <a class="btn btn-ink map-open" href="https://www.google.com/maps/search/?api=1&amp;query={{mapsQuery}}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-pin"/></svg>Abrir no Google Maps</a>
     </div>
   </div>
 </section>
@@ -898,10 +820,10 @@ a{color:inherit}
         <p class="lead" style="max-width:52ch">Diga o que você precisa e a conversa já começa no assunto certo.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <a class="btn btn-green" href="https://wa.me/5541992351553?text=Quero%20meu%20celular%20no%20boleto" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quero meu celular no boleto</a>
-        <a class="btn btn-line" href="https://wa.me/5541992351553?text=Pedir%20or%C3%A7amento%20do%20conserto" target="_blank" rel="noopener">Pedir orçamento do conserto</a>
-        <a class="btn btn-line" href="https://wa.me/5541992351553?text=Perguntar%20se%20tem%20o%20acess%C3%B3rio" target="_blank" rel="noopener">Perguntar se tem o acessório</a>
-        <a class="btn btn-line" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.%20Annibale%20Ferrarini%2C%201117%2C%20Campina%20Grande%20do%20Sul%20-%20PR%2C%2083430-000" target="_blank" rel="noopener">Ver rota até a loja</a>
+        <a class="btn btn-green" href="{{wa.boleto}}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quero meu celular no boleto</a>
+        <a class="btn btn-line" href="{{wa.conserto}}" target="_blank" rel="noopener">Pedir orçamento do conserto</a>
+        <a class="btn btn-line" href="{{wa.acessorio}}" target="_blank" rel="noopener">Perguntar se tem o acessório</a>
+        <a class="btn btn-line" href="https://www.google.com/maps/dir/?api=1&amp;destination={{mapsQuery}}" target="_blank" rel="noopener">Ver rota até a loja</a>
       </div>
     </div>
     <figure class="side-photo lg:col-span-5 reveal" style="margin:0;min-height:480px">
@@ -922,18 +844,18 @@ a{color:inherit}
     </div>
     <div class="lg:col-span-3">
       <h2>Endereço</h2>
-      <address style="font-style:normal">R. Annibale Ferrarini, 1117 – Dentro do Boni, Campina Grande do Sul – PR, 83430-000</address>
+      <address style="font-style:normal">{{enderecoCompleto}}</address>
     </div>
     <div class="lg:col-span-2">
       <h2>Horário</h2>
-      <ul><li>Seg a sáb: 10h às 20h</li><li>Domingo: 10h às 18h</li></ul>
+      <ul>{{#horarioRodape}}<li>{{.}}</li>{{/horarioRodape}}</ul>
     </div>
     <div class="lg:col-span-3">
       <h2>Contato</h2>
       <ul>
-        <li><a href="https://wa.me/5541992351553" target="_blank" rel="noopener">WhatsApp (41) 99235-1553</a></li>
-        <li><a href="https://www.instagram.com/infotechinformaticacgs/" target="_blank" rel="noopener">Instagram @infotechinformaticacgs</a></li>
-        <li><a href="https://c8.rein.net.br/infotech_1353/buscadorProdutos.php" target="_blank" rel="noopener">Sistema Infotech</a></li>
+        <li><a href="{{wa.base}}" target="_blank" rel="noopener">WhatsApp {{telDisplay}}</a></li>
+        <li><a href="{{instagramUrl}}" target="_blank" rel="noopener">Instagram @{{instagram}}</a></li>
+        <li><a href="{{links.sistema}}" target="_blank" rel="noopener">Sistema Infotech</a></li>
       </ul>
     </div>
   </div>
@@ -943,7 +865,7 @@ a{color:inherit}
 </footer>
 
 <div class="rail" aria-hidden="true"><div class="rail-track"></div><div class="rail-fill"></div><div class="rail-nodes"></div><div class="rail-head"><span class="rail-label"></span></div></div>
-<a class="fab" href="https://wa.me/5541992351553?text=Ol%C3%A1%2C%20Infotech!%20Vim%20pelo%20site." target="_blank" rel="noopener" aria-label="Conversar com a Infotech no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
+<a class="fab" href="{{wa.site}}" target="_blank" rel="noopener" aria-label="Conversar com a Infotech no WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg></a>
 
 <script>
 (function(){
@@ -953,8 +875,14 @@ a{color:inherit}
     var get=function(t){return (p.find(function(x){return x.type===t})||{}).value};
     var d=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].indexOf(get('weekday'));
     var h=parseInt(get('hour'),10)%24, m=parseInt(get('minute'),10);
-    var t=h*60+m, close=(d===0?1080:1200), open=t>=600&&t<close;
-    var txt=open?('Aberto agora · fecha às '+(d===0?'18h':'20h')):(t<600?'Fechado · abre hoje às 10h':'Fechado · abre amanhã às 10h');
+    // horário vem do painel: HR[dia] = [abre, fecha] em minutos, ou null se fechado (0 = domingo)
+    var HR={{{horarioJs}}};
+    var DN=['domingo','segunda','terça','quarta','quinta','sexta','sábado'];
+    var hm=function(x){var hh=Math.floor(x/60),mm=x%60;return hh+'h'+(mm?(mm<10?'0':'')+mm:'')};
+    var t=h*60+m, today=HR[d], open=!!today&&t>=today[0]&&t<today[1], txt;
+    if(open){txt='Aberto agora · fecha às '+hm(today[1])}
+    else if(today&&t<today[0]){txt='Fechado · abre hoje às '+hm(today[0])}
+    else{txt='Fechado';for(var k=1;k<=7;k++){var nd=(d+k)%7;if(HR[nd]){txt='Fechado · abre '+(k===1?'amanhã':(nd===0||nd===6?'no ':'na ')+DN[nd])+' às '+hm(HR[nd][0]);break}}}
     document.querySelectorAll('.js-status,.js-status-2').forEach(function(e){e.textContent=txt});
     if(!open){document.querySelectorAll('.js-dot,.js-status-pill .dot').forEach(function(e){e.classList.add('off')});var pill=document.querySelector('.js-status-pill');if(pill)pill.classList.add('off')}
     var row=document.querySelector('.hours tr[data-d="'+d+'"]');if(row)row.classList.add('today');
