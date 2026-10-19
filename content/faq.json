@@ -1,0 +1,36 @@
+{
+  "lista": [
+    {
+      "pergunta": "O boleto parcelado tem juros altos? É muita burocracia?",
+      "resposta": "Antes de fechar, você vê o valor de cada parcela e o total, e decide com os números na mão. A análise é feita no balcão, com aprovação rápida e sem consulta ao SPC/Serasa."
+    },
+    {
+      "pergunta": "O que vão me pedir para aprovar?",
+      "resposta": "A análise é feita no balcão, sem consulta ao SPC/Serasa. Para saber o que levar, chame no WhatsApp antes de ir. Se quiser chegar já sabendo, faça a simulação de pré-aprovação no botão “Simule aqui”. Consulte as condições para aprovação."
+    },
+    {
+      "pergunta": "Quais celulares saem no boleto?",
+      "resposta": "Somente Xiaomi (incluindo Redmi e POCO), Motorola e Samsung, em até 18x com entrada facilitada. Para outras marcas, pergunte pelas outras formas de pagamento, como o cartão."
+    },
+    {
+      "pergunta": "E se o conserto não ficar bom, ou piorar?",
+      "resposta": "Primeiro vem o diagnóstico e o orçamento: você sabe o que tem e quanto custa antes de qualquer peça ser trocada. E o serviço tem garantia."
+    },
+    {
+      "pergunta": "Quanto tempo fico sem o meu celular?",
+      "resposta": "Depende do serviço, e o prazo é combinado já no orçamento. Enquanto isso, você faz suas compras no Boni."
+    },
+    {
+      "pergunta": "Acessório barato não estraga logo?",
+      "resposta": "Tem mais de uma linha para cada item, da mais em conta à mais reforçada, e a gente fala a diferença na hora."
+    },
+    {
+      "pergunta": "Celular seminovo não é furada?",
+      "resposta": "Você liga e testa no balcão antes de pagar: tela, câmera, bateria e sinal."
+    },
+    {
+      "pergunta": "Aceita cartão?",
+      "resposta": "Sim. Além do boleto, dá para parcelar no cartão."
+    }
+  ]
+}

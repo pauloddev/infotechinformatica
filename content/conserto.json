@@ -1,0 +1,18 @@
+{
+  "celulares": [
+    "Reparo em celulares",
+    "Reparo em tablets",
+    "Troca de tela",
+    "Conectores e baterias",
+    "Software e formatação",
+    "Reparo em placas"
+  ],
+  "informatica": [
+    "Formatação",
+    "SSDs, HDs e pen drives",
+    "Computadores e notebooks",
+    "Troca de tela e teclados (notebook)",
+    "Roteadores e repetidores",
+    "Redes LAN e Wi-Fi"
+  ]
+}

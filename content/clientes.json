@@ -1,0 +1,39 @@
+{
+  "lista": [
+    {
+      "foto": "/img/cliente-casal.webp",
+      "descricao_foto": "Junior, da Infotech, ao lado de um casal de clientes segurando um celular rosa e a caixa de um fone Redmi",
+      "marca": "Cliente Infotech",
+      "titulo": "Celular novo e fone Bluetooth de brinde",
+      "destaque": true
+    },
+    {
+      "foto": "/img/cliente-galaxy-a17.webp",
+      "descricao_foto": "Cliente sorrindo com a caixa de um Samsung Galaxy A17 ao lado de Junior",
+      "marca": "Samsung",
+      "titulo": "Galaxy A17",
+      "destaque": false
+    },
+    {
+      "foto": "/img/cliente-poco-c85.webp",
+      "descricao_foto": "Cliente com a caixa amarela de um POCO C85 no balcão da Infotech",
+      "marca": "Xiaomi",
+      "titulo": "POCO C85",
+      "destaque": false
+    },
+    {
+      "foto": "/img/cliente-redmi-a5.webp",
+      "descricao_foto": "Cliente segurando a caixa de um Redmi A5 e uma capa, ao lado de Junior na entrada da loja",
+      "marca": "Xiaomi",
+      "titulo": "Redmi A5 + capa",
+      "destaque": false
+    },
+    {
+      "foto": "/img/cliente-galaxy-a07.webp",
+      "descricao_foto": "Cliente com a caixa de um Samsung Galaxy A07 na calçada do Boni, ao lado de Junior",
+      "marca": "Samsung",
+      "titulo": "Galaxy A07",
+      "destaque": false
+    }
+  ]
+}

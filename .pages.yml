@@ -1,0 +1,233 @@
+# Painel administrativo do site (Pages CMS — https://app.pagescms.org)
+# Cada vez que algo é salvo no painel, a Vercel publica o site de novo (1–2 min).
+
+media:
+  input: img
+  output: /img
+  categories: [image]
+  rename: safe
+
+components:
+  dia:
+    type: object
+    fields:
+      - name: fechado
+        label: Fechado neste dia
+        type: boolean
+      - name: abre
+        label: Abre às
+        type: string
+        description: "Formato 10:00"
+        pattern:
+          regex: "^([01]?[0-9]|2[0-4]):[0-5][0-9]$"
+          message: "Use o formato 10:00"
+      - name: fecha
+        label: Fecha às
+        type: string
+        description: "Formato 20:00"
+        pattern:
+          regex: "^([01]?[0-9]|2[0-4]):[0-5][0-9]$"
+          message: "Use o formato 20:00"
+
+content:
+  - name: clientes
+    label: Fotos de clientes
+    type: file
+    path: content/clientes.json
+    format: json
+    fields:
+      - name: lista
+        label: "Seção \"Saiu mais um celular\""
+        description: "Arraste para mudar a ordem. Marque \"Foto grande\" em uma ou duas para destacar."
+        type: object
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{marca} · {titulo}"
+        fields:
+          - name: foto
+            label: Foto
+            type: image
+            required: true
+            description: "Pode mandar a foto direto do celular: o site diminui e otimiza sozinho."
+          - name: marca
+            label: Marca (texto verde pequeno)
+            type: string
+            required: true
+            description: "Ex.: Samsung, Xiaomi, Motorola"
+          - name: titulo
+            label: Modelo / título
+            type: string
+            required: true
+            description: "Ex.: Galaxy A17"
+          - name: descricao_foto
+            label: Descrição da foto (opcional)
+            type: string
+            description: "O que aparece na foto, para o Google e para quem usa leitor de tela. Ex.: Cliente com a caixa de um Galaxy A17 no balcão"
+          - name: destaque
+            label: Foto grande
+            type: boolean
+
+  - name: boleto
+    label: Celular no boleto
+    type: file
+    path: content/boleto.json
+    format: json
+    fields:
+      - name: parcelas
+        label: Máximo de parcelas
+        type: number
+        required: true
+        description: "Muda o \"até 18x\" em todo o site."
+      - name: brinde
+        label: Brinde da promoção
+        type: string
+        required: true
+        description: "Ex.: Capa, película e fone Bluetooth, conforme a promoção vigente."
+      - name: modelos
+        label: "Modelos que \"Já saíram daqui\""
+        type: string
+        list: true
+
+  - name: acessorios
+    label: Acessórios
+    type: file
+    path: content/acessorios.json
+    format: json
+    fields:
+      - name: lista
+        label: Categorias de acessórios
+        description: "Arraste para mudar a ordem. \"Foto grande\" deixa o quadro em destaque."
+        type: object
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{titulo}"
+        fields:
+          - name: foto
+            label: Foto
+            type: image
+            required: true
+          - name: categoria
+            label: Categoria (texto verde pequeno)
+            type: string
+            required: true
+            description: "Ex.: Proteção"
+          - name: titulo
+            label: Título
+            type: string
+            required: true
+            description: "Ex.: Capas"
+          - name: texto
+            label: Texto
+            type: string
+            description: "Ex.: Para Samsung, Motorola, Xiaomi e iPhone."
+          - name: descricao_foto
+            label: Descrição da foto (opcional)
+            type: string
+          - name: destaque
+            label: Foto grande
+            type: boolean
+
+  - name: conserto
+    label: Serviços de conserto
+    type: file
+    path: content/conserto.json
+    format: json
+    fields:
+      - name: celulares
+        label: Celulares e tablets
+        type: string
+        list: true
+      - name: informatica
+        label: Informática
+        type: string
+        list: true
+
+  - name: faq
+    label: Dúvidas frequentes
+    type: file
+    path: content/faq.json
+    format: json
+    fields:
+      - name: lista
+        label: Perguntas
+        description: "A primeira pergunta aparece aberta."
+        type: object
+        list:
+          collapsible:
+            collapsed: true
+            summary: "{pergunta}"
+        fields:
+          - name: pergunta
+            label: Pergunta
+            type: string
+            required: true
+          - name: resposta
+            label: Resposta
+            type: text
+            required: true
+
+  - name: loja
+    label: Dados da loja
+    type: file
+    path: content/loja.json
+    format: json
+    fields:
+      - name: whatsapp
+        label: WhatsApp
+        type: string
+        required: true
+        description: "DDD + número, só números. Ex.: 41992351553. Muda todos os botões do site."
+      - name: instagram
+        label: Instagram
+        type: string
+        required: true
+        description: "Só o usuário, sem @. Ex.: infotechinformaticacgs"
+      - name: endereco
+        label: Endereço
+        type: string
+        required: true
+        description: "Ex.: R. Annibale Ferrarini, 1117 – Dentro do Boni"
+      - name: cidade
+        label: Cidade
+        type: string
+        required: true
+      - name: uf
+        label: Estado (sigla)
+        type: string
+        required: true
+      - name: cep
+        label: CEP
+        type: string
+        required: true
+      - name: horario
+        label: Horário de funcionamento
+        description: "O site mostra sozinho \"Aberto agora\" ou \"Fechado\" com base nestes horários."
+        type: object
+        fields:
+          - { name: segunda, label: Segunda-feira, component: dia }
+          - { name: terca, label: Terça-feira, component: dia }
+          - { name: quarta, label: Quarta-feira, component: dia }
+          - { name: quinta, label: Quinta-feira, component: dia }
+          - { name: sexta, label: Sexta-feira, component: dia }
+          - { name: sabado, label: Sábado, component: dia }
+          - { name: domingo, label: Domingo, component: dia }
+      - name: links
+        label: Links
+        type: object
+        fields:
+          - name: payjoy
+            label: "Link \"Simule aqui\" (PayJoy)"
+            type: string
+            required: true
+          - name: sistema
+            label: Link do Sistema Infotech
+            type: string
+            required: true
+          - name: flexfone
+            label: Link Flexfone
+            type: string
+            required: true

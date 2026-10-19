@@ -1,0 +1,68 @@
+{
+  "lista": [
+    {
+      "foto": "/img/audio.webp",
+      "descricao_foto": "Caixa de som com microfones, Amazon Echo Dot, Echo Pop, Echo Spot e headphones JBL expostos no balcão",
+      "categoria": "Áudio e casa",
+      "titulo": "Caixinhas de som, headsets e Echo",
+      "texto": "Caixinhas de som, headsets, fones Bluetooth e assistentes Alexa para a sala.",
+      "destaque": true
+    },
+    {
+      "foto": "/img/capas.webp",
+      "descricao_foto": "Parede com dezenas de capas de celular coloridas penduradas",
+      "categoria": "Proteção",
+      "titulo": "Capas",
+      "texto": "Para Samsung, Motorola, Xiaomi e iPhone.",
+      "destaque": false
+    },
+    {
+      "foto": "/img/peliculas.webp",
+      "descricao_foto": "Parede de películas 3D e de privacidade organizadas por modelo",
+      "categoria": "Proteção",
+      "titulo": "Películas",
+      "texto": "3D, de vidro e de privacidade.",
+      "destaque": false
+    },
+    {
+      "foto": "/img/cabos.webp",
+      "descricao_foto": "Displays com cabos de dados USB coloridos e fones com fio no balcão",
+      "categoria": "Energia",
+      "titulo": "Cabos e carregadores",
+      "texto": "Cabos, carregadores, carregadores veiculares e adaptadores.",
+      "destaque": false
+    },
+    {
+      "foto": "/img/fones.webp",
+      "descricao_foto": "Prateleira com fones de ouvido com fio e power banks embalados",
+      "categoria": "Áudio e energia",
+      "titulo": "Fones e power banks",
+      "texto": "Fones com fio e baterias portáteis.",
+      "destaque": false
+    },
+    {
+      "foto": "/img/gamer-vestiveis.webp",
+      "descricao_foto": "Vitrine com smartwatches, controle de videogame sem fio e mouses gamer",
+      "categoria": "Gamer e vestíveis",
+      "titulo": "Controles e smartwatches",
+      "texto": "Controles de videogame, teclados gamers e smartwatches.",
+      "destaque": false
+    },
+    {
+      "foto": "/img/informatica-rede.webp",
+      "descricao_foto": "Vitrine com mouses, roteadores TP-Link, conversor digital e Fire TV Stick",
+      "categoria": "Conectividade, casa e TV",
+      "titulo": "Mouses, roteadores e TV",
+      "texto": "Mouses, roteadores, chips, controles de TV e eletrônicos em geral.",
+      "destaque": false
+    },
+    {
+      "foto": "/img/suportes.webp",
+      "descricao_foto": "Prateleira de suportes veiculares para celular de várias marcas",
+      "categoria": "Suportes",
+      "titulo": "Suportes",
+      "texto": "Veicular, de moto e de mesa.",
+      "destaque": false
+    }
+  ]
+}

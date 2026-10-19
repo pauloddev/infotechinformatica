@@ -1,0 +1,22 @@
+{
+  "whatsapp": "41992351553",
+  "instagram": "infotechinformaticacgs",
+  "endereco": "R. Annibale Ferrarini, 1117 – Dentro do Boni",
+  "cidade": "Campina Grande do Sul",
+  "uf": "PR",
+  "cep": "83430-000",
+  "horario": {
+    "segunda": { "fechado": false, "abre": "10:00", "fecha": "20:00" },
+    "terca": { "fechado": false, "abre": "10:00", "fecha": "20:00" },
+    "quarta": { "fechado": false, "abre": "10:00", "fecha": "20:00" },
+    "quinta": { "fechado": false, "abre": "10:00", "fecha": "20:00" },
+    "sexta": { "fechado": false, "abre": "10:00", "fecha": "20:00" },
+    "sabado": { "fechado": false, "abre": "10:00", "fecha": "20:00" },
+    "domingo": { "fechado": false, "abre": "10:00", "fecha": "18:00" }
+  },
+  "links": {
+    "payjoy": "https://www.payjoy.com/br/pfsh-valueprop",
+    "sistema": "https://c8.rein.net.br/infotech_1353/buscadorProdutos.php",
+    "flexfone": "https://vendas.flexfone.com.br/super-compra"
+  }
+}
