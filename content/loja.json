@@ -15,7 +15,7 @@
     "domingo": { "fechado": false, "abre": "10:00", "fecha": "18:00" }
   },
   "links": {
-    "payjoy": "https://www.payjoy.com/br/pfsh-valueprop",
+    "payjoy": "https://analise.infotechinformatica.com",
     "sistema": "https://c8.rein.net.br/infotech_1353/buscadorProdutos.php",
     "flexfone": "https://vendas.flexfone.com.br/super-compra"
   }
