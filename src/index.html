@@ -130,7 +130,7 @@ a{color:inherit}
 .nav a:hover{color:var(--g1);border-color:var(--g1)}
 .nav a{white-space:nowrap}
 .hdr .btn{white-space:nowrap}
-@media(min-width:1024px) and (max-width:1279px){.nav{gap:12px!important}.nav a{font-size:13.5px}.hdr .logo{height:36px}.hdr .btn span{display:none}.hdr .btn{width:44px;padding:0}}
+@media(min-width:1024px) and (max-width:1279px){.nav{gap:10px!important}.nav a{font-size:13px}.hdr .logo{height:36px}.hdr .btn span{display:none}.hdr .btn{width:44px;padding:0}}
 .nav a.nav-hot{color:var(--g1);border:1.5px solid rgba(61,255,154,.5);border-radius:999px;padding:var(--s1) var(--s3)}
 .nav a.nav-hot:hover{background:var(--g1);color:var(--ink)}
 .hdr .btn{min-height:44px;padding:0 var(--s3);font-size:14px}
@@ -228,6 +228,30 @@ a{color:inherit}
 .lineup figcaption{position:absolute;z-index:2;left:var(--s4);right:var(--s4);bottom:var(--s4);color:var(--white);font-family:var(--f-tech);font-weight:600;font-size:15px}
 .models{list-style:none;padding:0;margin:var(--s3) 0 0;display:flex;flex-wrap:wrap;gap:var(--s2)}
 .models li{font-family:var(--f-tech);font-weight:600;font-size:14px;padding:var(--s1) var(--s3);border:1px solid rgba(61,255,154,.4);border-radius:999px;color:var(--white)}
+
+/* ============ ANÁLISE NO TOPO ============ */
+.an-head{display:flex;flex-direction:column;align-items:flex-start;gap:var(--s3)}
+.an-title{margin:0;font-family:var(--f-display);font-stretch:118%;font-weight:900;text-transform:uppercase;line-height:.92;letter-spacing:-.02em;width:100%}
+.an-title span{display:block;white-space:nowrap;width:max-content;max-width:none}
+.an-l1{font-size:clamp(40px,13vw,96px);color:var(--white)}
+.an-l2{font-size:clamp(32px,10.4vw,76px)}
+.an-tag{margin:0;display:inline-block;font-family:var(--f-tech);font-weight:700;font-size:clamp(16px,4.6vw,24px);letter-spacing:.05em;white-space:nowrap;text-transform:uppercase;color:var(--ink);background:var(--grad);padding:10px 18px;border-radius:6px;box-shadow:0 0 0 2px rgba(61,255,154,.35),0 10px 30px -8px rgba(0,201,111,.9);transform:rotate(-2deg);transform-origin:left center}
+.an-card{box-sizing:border-box;width:100%;background:rgba(11,16,13,.86);border:1px solid var(--ink-4);border-radius:var(--radius-m);padding:var(--s4);display:flex;flex-direction:column;gap:var(--s3);max-width:620px;box-shadow:0 32px 64px rgba(0,0,0,.45)}
+.an-grid{display:grid;grid-template-columns:1fr;gap:12px}
+@media(min-width:640px){.an-grid{grid-template-columns:1fr 1fr}}
+.an-field{display:flex;flex-direction:column;gap:4px;min-width:0}
+.an-field label{font-family:var(--f-tech);font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-dark)}
+.an-field input{box-sizing:border-box;width:100%;font:500 16px/1.2 var(--f-body,inherit);color:var(--white);background:var(--ink-3);border:1px solid var(--ink-4);border-radius:var(--radius-s);padding:12px 14px;min-height:48px;outline:none;transition:border-color .15s,box-shadow .15s}
+.an-field input::placeholder{color:#6f7c75}
+.an-field input:focus-visible{border-color:var(--g2);box-shadow:0 0 0 3px rgba(0,201,111,.22)}
+.an-field.bad input{border-color:#ff7a7a}
+.an-err{margin:0;font-size:12.5px;color:#ff7a7a}
+.an-err:empty{display:none}
+.an-btn{border:0;cursor:pointer;width:100%;font-size:17px;letter-spacing:.1em;text-transform:uppercase}
+.an-fine{margin:0;font-size:12.5px;color:var(--muted-dark);text-align:center}
+.an-done[hidden]{display:none}
+.an-done{padding:12px;border:1px solid var(--g2);border-radius:var(--radius-s);background:rgba(0,201,111,.08);font-size:14px;display:flex;flex-direction:column;gap:8px;text-align:center}
+.an-done a{display:flex;align-items:center;justify-content:center;min-height:44px;border-radius:var(--radius-s);background:var(--grad);color:var(--ink);font-family:var(--f-tech);font-weight:700;letter-spacing:.06em;text-transform:uppercase;text-decoration:none}
 
 /* ============ SIMULE / SISTEMA ============ */
 .action{position:relative;display:flex;flex-direction:column;justify-content:space-between;gap:var(--s5);min-height:320px;padding:var(--s5) var(--s4);border-radius:var(--radius-l);text-decoration:none;overflow:hidden;isolation:isolate;transition:transform .3s var(--ease),box-shadow .3s var(--ease)}
@@ -460,6 +484,7 @@ a{color:inherit}
       <a href="#acessorios">Acessórios</a>
       <a href="{{links.sistema}}" target="_blank" rel="noopener">Sistema</a>
       <a href="{{links.flexfone}}" target="_blank" rel="noopener">Flexfone</a>
+      {{#links.parcelex}}<a href="{{links.parcelex}}" target="_blank" rel="noopener">Parcelex</a>{{/links.parcelex}}
       <a href="#clientes">Clientes</a>
       <a href="#onde">Onde fica</a>
       <a class="nav-hot" href="{{links.payjoy}}" target="_blank" rel="noopener">Simule aqui</a>
@@ -477,13 +502,42 @@ a{color:inherit}
   <div class="hero-glow" aria-hidden="true"></div>
   <div class="wrap grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
     <div class="lg:col-span-7 flex flex-col gap-6 reveal">
-      <p class="eyebrow">Tecnologia para o seu dia a dia</p>
-      <h1 id="h-hero" class="display h1">Celular <span class="grad-text nb">no boleto</span>, conserto e acessório. Tudo num lugar só.</h1>
-      <p class="lead" style="max-width:56ch">Xiaomi, Motorola e Samsung em até {{boleto.parcelas}}x no boleto, sem cartão de crédito. Conserto de celular (iPhone e Android) e de computador. E o carregador ou a película que faltava. Tudo no mesmo balcão, enquanto você faz as compras em Campina Grande do Sul.</p>
-      <div class="flex flex-col sm:flex-row gap-4">
-        <a class="btn btn-green btn-block-m" href="{{wa.boleto}}" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Quero meu celular no boleto</a>
-        <a class="btn btn-line btn-block-m" href="{{wa.conserto}}" target="_blank" rel="noopener">Pedir orçamento do conserto</a>
+      <div class="an-head">
+        <h1 id="h-hero" class="an-title"><span class="an-l1">Celular</span><span class="an-l2 grad-text">no boleto</span></h1>
+        <p class="an-tag">Mesmo com nome sujo!</p>
       </div>
+
+      <form class="an-card" id="an-form" data-wa="{{wa.base}}" novalidate aria-label="Fazer análise de crédito">
+        <div class="an-grid">
+          <div class="an-field" id="an-f-nome">
+            <label for="an-nome">Nome</label>
+            <input id="an-nome" name="nome" type="text" autocomplete="name" placeholder="Seu nome completo">
+            <p class="an-err" id="an-e-nome"></p>
+          </div>
+          <div class="an-field" id="an-f-cpf">
+            <label for="an-cpf">CPF</label>
+            <input id="an-cpf" name="cpf" type="text" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00" maxlength="14">
+            <p class="an-err" id="an-e-cpf"></p>
+          </div>
+          <div class="an-field" id="an-f-email">
+            <label for="an-email">E-mail</label>
+            <input id="an-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="seuemail@exemplo.com">
+            <p class="an-err" id="an-e-email"></p>
+          </div>
+          <div class="an-field" id="an-f-zap">
+            <label for="an-zap">WhatsApp com DDD</label>
+            <input id="an-zap" name="zap" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="(41) 9 0000-0000" maxlength="16">
+            <p class="an-err" id="an-e-zap"></p>
+          </div>
+        </div>
+        <button class="btn btn-green an-btn" type="submit"><svg aria-hidden="true"><use href="#i-wa"/></svg>Fazer análise</button>
+        <p class="an-fine">Você será levado ao nosso WhatsApp. Sujeito a análise de crédito.</p>
+        <div class="an-done" id="an-done" hidden>
+          <span>Se o WhatsApp não abriu sozinho, toque abaixo:</span>
+          <a id="an-wa" href="{{wa.boleto}}" target="_blank" rel="noopener">Continuar no WhatsApp</a>
+        </div>
+      </form>
+
       <div class="hero-meta">
         <span><i class="dot js-dot" aria-hidden="true"></i><span class="js-status">{{horarioResumo}}</span></span>
         <span><svg width="18" height="18" aria-hidden="true"><use href="#i-pin"/></svg>{{endereco}}</span>
@@ -921,6 +975,48 @@ a{color:inherit}
   if(fab&&ftr&&'IntersectionObserver' in window){
     new IntersectionObserver(function(es){fab.classList.toggle('hide',es[0].isIntersecting)}).observe(ftr);
   }
+})();
+</script>
+<script>
+(function(){
+  // título do topo: cada linha ocupa a largura disponível
+  var h=document.querySelector('.an-title'); if(!h) return;
+  var lines=[].slice.call(h.querySelectorAll('span'));
+  var max=[96,76];
+  function fit(){
+    var avail=h.clientWidth;
+    lines.forEach(function(el,i){
+      el.style.fontSize='';
+      var cur=parseFloat(getComputedStyle(el).fontSize), w=el.getBoundingClientRect().width;
+      if(w) el.style.fontSize=Math.min(max[i],cur*avail/w*0.98)+'px';
+    });
+  }
+  fit(); if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fit);
+  window.addEventListener('resize',fit);
+})();
+(function(){
+  // formulário de análise -> WhatsApp da loja
+  var f=document.getElementById('an-form'); if(!f) return;
+  var $=function(id){return document.getElementById(id)};
+  var dg=function(s){return (s||'').replace(/\D/g,'')};
+  function mCPF(v){v=dg(v).slice(0,11);return v.replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2')}
+  function mZap(v){v=dg(v).slice(0,11);if(v.length<=2)return v.length?'('+v:v;if(v.length<=6)return '('+v.slice(0,2)+') '+v.slice(2);if(v.length<=10)return '('+v.slice(0,2)+') '+v.slice(2,6)+'-'+v.slice(6);return '('+v.slice(0,2)+') '+v.slice(2,3)+' '+v.slice(3,7)+'-'+v.slice(7)}
+  function cpfOk(c){c=dg(c);if(c.length!==11||/^(\d)\1{10}$/.test(c))return false;var s=0,i;for(i=0;i<9;i++)s+=+c[i]*(10-i);if((s*10)%11%10!==+c[9])return false;s=0;for(i=0;i<10;i++)s+=+c[i]*(11-i);return (s*10)%11%10===+c[10]}
+  function err(k,m){$('an-e-'+k).textContent=m||'';$('an-f-'+k).classList.toggle('bad',!!m)}
+  $('an-cpf').addEventListener('input',function(e){e.target.value=mCPF(e.target.value)});
+  $('an-zap').addEventListener('input',function(e){e.target.value=mZap(e.target.value)});
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var nome=$('an-nome').value.trim(), cpf=$('an-cpf').value, email=$('an-email').value.trim(), zap=$('an-zap').value, ok=true, z=dg(zap);
+    if(nome.split(/\s+/).filter(Boolean).length<2){err('nome','Digite seu nome e sobrenome.');ok=false}else err('nome');
+    if(!cpfOk(cpf)){err('cpf','Confira o CPF: ele precisa ter 11 números válidos.');ok=false}else err('cpf');
+    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){err('email','Digite um e-mail válido, por exemplo nome@gmail.com.');ok=false}else err('email');
+    if(z.length<10||z.length>11){err('zap','Digite o WhatsApp com DDD.');ok=false}else err('zap');
+    if(!ok){var b=f.querySelector('.an-field.bad input');if(b)b.focus();return}
+    var msg='Olá! Quero fazer a análise do *celular no boleto*.\n\n*Nome:* '+nome+'\n*CPF:* '+mCPF(cpf)+'\n*E-mail:* '+email+'\n*WhatsApp:* '+mZap(zap);
+    var a=$('an-wa'); a.href=f.getAttribute('data-wa')+'?text='+encodeURIComponent(msg);
+    $('an-done').hidden=false; a.click();
+  });
 })();
 </script>
 </body>

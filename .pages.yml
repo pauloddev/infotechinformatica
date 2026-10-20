@@ -231,3 +231,6 @@ content:
             label: Link Flexfone
             type: string
             required: true
+          - name: parcelex
+            label: Link Parcelex
+            type: string
