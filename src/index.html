@@ -483,8 +483,7 @@ a{color:inherit}
       <a href="#conserto">Conserto</a>
       <a href="#acessorios">Acessórios</a>
       <a href="{{links.sistema}}" target="_blank" rel="noopener">Sistema</a>
-      <a href="{{links.flexfone}}" target="_blank" rel="noopener">Flexfone</a>
-      {{#links.parcelex}}<a href="{{links.parcelex}}" target="_blank" rel="noopener">Parcelex</a>{{/links.parcelex}}
+      {{#links.extras}}<a href="{{url}}" target="_blank" rel="noopener">{{nome}}</a>{{/links.extras}}
       <a href="#clientes">Clientes</a>
       <a href="#onde">Onde fica</a>
       <a class="nav-hot" href="{{links.payjoy}}" target="_blank" rel="noopener">Simule aqui</a>
@@ -910,6 +909,7 @@ a{color:inherit}
         <li><a href="{{wa.base}}" target="_blank" rel="noopener">WhatsApp {{telDisplay}}</a></li>
         <li><a href="{{instagramUrl}}" target="_blank" rel="noopener">Instagram @{{instagram}}</a></li>
         <li><a href="{{links.sistema}}" target="_blank" rel="noopener">Sistema Infotech</a></li>
+        {{#links.extras}}<li><a href="{{url}}" target="_blank" rel="noopener">{{nome}}</a></li>{{/links.extras}}
       </ul>
     </div>
   </div>

@@ -178,7 +178,15 @@ const view = {
   telDisplay: `(${ddd}) ${numFmt}`,
   instagram: loja.instagram.replace(/^@/, ''),
   instagramUrl: `https://www.instagram.com/${loja.instagram.replace(/^@/, '')}/`,
-  links: loja.links,
+  links: {
+    ...loja.links,
+    extras: [
+      ...(loja.links.extras || []),
+      // compatibilidade com o formato antigo
+      ...(loja.links.flexfone ? [{ nome: 'Flexfone', url: loja.links.flexfone }] : []),
+      ...(loja.links.parcelex ? [{ nome: 'Parcelex', url: loja.links.parcelex }] : []),
+    ].filter((l) => l && l.nome && l.url),
+  },
   endereco: loja.endereco,
   cidade: loja.cidade,
   uf: loja.uf,

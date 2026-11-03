@@ -6,18 +6,54 @@
   "uf": "PR",
   "cep": "83430-000",
   "horario": {
-    "segunda": { "fechado": false, "abre": "10:00", "fecha": "20:00" },
-    "terca": { "fechado": false, "abre": "10:00", "fecha": "20:00" },
-    "quarta": { "fechado": false, "abre": "10:00", "fecha": "20:00" },
-    "quinta": { "fechado": false, "abre": "10:00", "fecha": "20:00" },
-    "sexta": { "fechado": false, "abre": "10:00", "fecha": "20:00" },
-    "sabado": { "fechado": false, "abre": "10:00", "fecha": "20:00" },
-    "domingo": { "fechado": false, "abre": "10:00", "fecha": "18:00" }
+    "segunda": {
+      "fechado": false,
+      "abre": "10:00",
+      "fecha": "20:00"
+    },
+    "terca": {
+      "fechado": false,
+      "abre": "10:00",
+      "fecha": "20:00"
+    },
+    "quarta": {
+      "fechado": false,
+      "abre": "10:00",
+      "fecha": "20:00"
+    },
+    "quinta": {
+      "fechado": false,
+      "abre": "10:00",
+      "fecha": "20:00"
+    },
+    "sexta": {
+      "fechado": false,
+      "abre": "10:00",
+      "fecha": "20:00"
+    },
+    "sabado": {
+      "fechado": false,
+      "abre": "10:00",
+      "fecha": "20:00"
+    },
+    "domingo": {
+      "fechado": false,
+      "abre": "10:00",
+      "fecha": "18:00"
+    }
   },
   "links": {
     "payjoy": "https://analise.infotechinformatica.com",
     "sistema": "https://c8.rein.net.br/infotech_1353/buscadorProdutos.php",
-    "flexfone": "https://vendas.flexfone.com.br/super-compra",
-    "parcelex": "https://centrax.parcelex.com.br/link-de-pagamento?startDate=2026-09-20&endDate=2026-10-20&search=&active=false&status=ALL"
+    "extras": [
+      {
+        "nome": "Flexfone",
+        "url": "https://vendas.flexfone.com.br/super-compra"
+      },
+      {
+        "nome": "Parcelex",
+        "url": "https://centrax.parcelex.com.br/link-de-pagamento?startDate=2026-09-20&endDate=2026-10-20&search=&active=false&status=ALL"
+      }
+    ]
   }
 }

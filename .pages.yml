@@ -227,10 +227,22 @@ content:
             label: Link do Sistema Infotech
             type: string
             required: true
-          - name: flexfone
-            label: Link Flexfone
-            type: string
-            required: true
-          - name: parcelex
-            label: Link Parcelex
-            type: string
+          - name: extras
+            label: Outros links do menu
+            description: "Aparecem no menu do topo e no rodapé. Clique em \"Add\" para adicionar mais um link e arraste para mudar a ordem."
+            type: object
+            list:
+              collapsible:
+                collapsed: true
+                summary: "{nome}"
+            fields:
+              - name: nome
+                label: Nome do botão
+                type: string
+                required: true
+                description: "Ex.: Flexfone"
+              - name: url
+                label: Link
+                type: string
+                required: true
+                description: "Endereço completo, começando com https://"
