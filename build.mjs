@@ -28,6 +28,48 @@ const acessorios = lista(await readJson('acessorios.json'));
 const clientes = lista(await readJson('clientes.json'));
 const faq = lista(await readJson('faq.json'));
 
+// ---------- formulário de análise (topo) ----------
+let formulario = {};
+try { formulario = await readJson('formulario.json'); } catch { /* usa o padrão abaixo */ }
+const TIPOS = { // atributos fixos de cada tipo de campo
+  nome: { msg: 'Nome', type: 'text', attrs: 'autocomplete="name"' },
+  cpf: { msg: 'CPF', type: 'text', attrs: 'inputmode="numeric" autocomplete="off" maxlength="14"' },
+  email: { msg: 'E-mail', type: 'email', attrs: 'inputmode="email" autocomplete="email"' },
+  whatsapp: { msg: 'WhatsApp', type: 'tel', attrs: 'inputmode="numeric" autocomplete="tel-national" maxlength="16"' },
+  cep: { msg: 'CEP', type: 'text', attrs: 'inputmode="numeric" autocomplete="postal-code" maxlength="9"' },
+  data: { msg: 'Nascimento', type: 'text', attrs: 'inputmode="numeric" autocomplete="bday" maxlength="10"' },
+  texto: { msg: '', type: 'text', attrs: 'autocomplete="off"' },
+};
+const camposPadrao = [
+  { tipo: 'nome', rotulo: 'Nome', placeholder: 'Seu nome completo', obrigatorio: true },
+  { tipo: 'cpf', rotulo: 'CPF', placeholder: '000.000.000-00', obrigatorio: true },
+  { tipo: 'email', rotulo: 'E-mail', placeholder: 'seuemail@exemplo.com', obrigatorio: true },
+  { tipo: 'whatsapp', rotulo: 'WhatsApp com DDD', placeholder: '(41) 9 0000-0000', obrigatorio: true },
+];
+const camposBrutos = lista(formulario.campos).filter((c) => c && (c.tipo || c.rotulo));
+const campos = (camposBrutos.length ? camposBrutos : camposPadrao).map((c, i) => {
+  const tipo = TIPOS[c.tipo] ? c.tipo : 'texto';
+  const rotulo = String(c.rotulo || '').trim();
+  if (!rotulo) fail(`O campo nº ${i + 1} do "Formulário de análise" está sem nome.`);
+  const T = TIPOS[tipo];
+  return {
+    i, tipo, rotulo, inputType: T.type, attrs: T.attrs,
+    placeholder: String(c.placeholder || '').trim(),
+    msg: T.msg || rotulo,
+    obrigatorio: c.obrigatorio !== false,
+  };
+});
+const form = {
+  titulo1: String(formulario.titulo1 || 'Celular').trim(),
+  titulo2: String(formulario.titulo2 || 'no boleto').trim(),
+  selo: String(formulario.selo ?? 'Mesmo com nome sujo!').trim(),
+  botao: String(formulario.botao || 'Fazer análise').trim(),
+  aviso: String(formulario.aviso ?? 'Você será levado ao nosso WhatsApp. Sujeito a análise de crédito.').trim(),
+  mensagem: String(formulario.mensagem || 'Olá! Quero fazer a análise do *celular no boleto*.').trim(),
+  campos,
+  impar: campos.length % 2 === 1,
+};
+
 // ---------- telefone / WhatsApp ----------
 const digits = String(loja.whatsapp || '').replace(/\D/g, '').replace(/^55(?=\d{10,11}$)/, '');
 if (!/^\d{10,11}$/.test(digits)) fail(`WhatsApp inválido em "Dados da loja": "${loja.whatsapp}". Use DDD + número, ex.: 41992351553.`);
@@ -175,6 +217,7 @@ const view = {
     indo: waMsg('Olá, Infotech! Estou indo até a loja.'),
     site: waMsg('Olá, Infotech! Vim pelo site.'),
   },
+  form,
   telDisplay: `(${ddd}) ${numFmt}`,
   instagram: loja.instagram.replace(/^@/, ''),
   instagramUrl: `https://www.instagram.com/${loja.instagram.replace(/^@/, '')}/`,

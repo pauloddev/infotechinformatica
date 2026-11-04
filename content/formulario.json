@@ -1,0 +1,15 @@
+{
+  "titulo1": "Celular",
+  "titulo2": "no boleto",
+  "selo": "Mesmo com nome sujo!",
+  "campos": [
+    { "tipo": "nome", "rotulo": "Nome", "placeholder": "Seu nome completo", "obrigatorio": true },
+    { "tipo": "cpf", "rotulo": "CPF", "placeholder": "000.000.000-00", "obrigatorio": true },
+    { "tipo": "email", "rotulo": "E-mail", "placeholder": "seuemail@exemplo.com", "obrigatorio": true },
+    { "tipo": "whatsapp", "rotulo": "WhatsApp com DDD", "placeholder": "(41) 9 0000-0000", "obrigatorio": true },
+    { "tipo": "cep", "rotulo": "CEP", "placeholder": "00000-000", "obrigatorio": true }
+  ],
+  "botao": "Fazer análise",
+  "aviso": "Você será levado ao nosso WhatsApp. Sujeito a análise de crédito.",
+  "mensagem": "Olá! Quero fazer a análise do *celular no boleto*."
+}

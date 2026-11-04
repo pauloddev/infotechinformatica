@@ -246,6 +246,10 @@ a{color:inherit}
 .an-field input:focus-visible{border-color:var(--g2);box-shadow:0 0 0 3px rgba(0,201,111,.22)}
 .an-field.bad input{border-color:#ff7a7a}
 .an-err{margin:0;font-size:12.5px;color:#ff7a7a}
+.an-odd .an-field:last-child{grid-column:1/-1}
+.an-field label small{font-size:inherit;font-weight:500;letter-spacing:.06em;text-transform:none;opacity:.75}
+.an-info{margin:0;font-size:12.5px;color:var(--g2)}
+.an-info:empty{display:none}
 .an-err:empty{display:none}
 .an-btn{border:0;cursor:pointer;width:100%;font-size:17px;letter-spacing:.1em;text-transform:uppercase}
 .an-fine{margin:0;font-size:12.5px;color:var(--muted-dark);text-align:center}
@@ -502,35 +506,23 @@ a{color:inherit}
   <div class="wrap grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
     <div class="lg:col-span-7 flex flex-col gap-6 reveal">
       <div class="an-head">
-        <h1 id="h-hero" class="an-title"><span class="an-l1">Celular</span><span class="an-l2 grad-text">no boleto</span></h1>
-        <p class="an-tag">Mesmo com nome sujo!</p>
+        <h1 id="h-hero" class="an-title"><span class="an-l1">{{form.titulo1}}</span><span class="an-l2 grad-text">{{form.titulo2}}</span></h1>
+        {{#form.selo}}<p class="an-tag">{{form.selo}}</p>{{/form.selo}}
       </div>
 
-      <form class="an-card" id="an-form" data-wa="{{wa.base}}" novalidate aria-label="Fazer análise de crédito">
-        <div class="an-grid">
-          <div class="an-field" id="an-f-nome">
-            <label for="an-nome">Nome</label>
-            <input id="an-nome" name="nome" type="text" autocomplete="name" placeholder="Seu nome completo">
-            <p class="an-err" id="an-e-nome"></p>
+      <form class="an-card" id="an-form" data-wa="{{wa.base}}" data-msg="{{form.mensagem}}" novalidate aria-label="Fazer análise de crédito">
+        <div class="an-grid{{#form.impar}} an-odd{{/form.impar}}">
+          {{#form.campos}}
+          <div class="an-field" id="an-f-{{i}}" data-tipo="{{tipo}}" data-msg="{{msg}}"{{#obrigatorio}} data-req{{/obrigatorio}}>
+            <label for="an-{{i}}">{{rotulo}}{{^obrigatorio}} <small>(opcional)</small>{{/obrigatorio}}</label>
+            <input id="an-{{i}}" name="campo{{i}}" type="{{inputType}}" {{{attrs}}} placeholder="{{placeholder}}"{{#obrigatorio}} aria-required="true"{{/obrigatorio}}>
+            <p class="an-info" id="an-i-{{i}}" aria-live="polite"></p>
+            <p class="an-err" id="an-e-{{i}}"></p>
           </div>
-          <div class="an-field" id="an-f-cpf">
-            <label for="an-cpf">CPF</label>
-            <input id="an-cpf" name="cpf" type="text" inputmode="numeric" autocomplete="off" placeholder="000.000.000-00" maxlength="14">
-            <p class="an-err" id="an-e-cpf"></p>
-          </div>
-          <div class="an-field" id="an-f-email">
-            <label for="an-email">E-mail</label>
-            <input id="an-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder="seuemail@exemplo.com">
-            <p class="an-err" id="an-e-email"></p>
-          </div>
-          <div class="an-field" id="an-f-zap">
-            <label for="an-zap">WhatsApp com DDD</label>
-            <input id="an-zap" name="zap" type="tel" inputmode="numeric" autocomplete="tel-national" placeholder="(41) 9 0000-0000" maxlength="16">
-            <p class="an-err" id="an-e-zap"></p>
-          </div>
+          {{/form.campos}}
         </div>
-        <button class="btn btn-green an-btn" type="submit"><svg aria-hidden="true"><use href="#i-wa"/></svg>Fazer análise</button>
-        <p class="an-fine">Você será levado ao nosso WhatsApp. Sujeito a análise de crédito.</p>
+        <button class="btn btn-green an-btn" type="submit"><svg aria-hidden="true"><use href="#i-wa"/></svg>{{form.botao}}</button>
+        {{#form.aviso}}<p class="an-fine">{{form.aviso}}</p>{{/form.aviso}}
         <div class="an-done" id="an-done" hidden>
           <span>Se o WhatsApp não abriu sozinho, toque abaixo:</span>
           <a id="an-wa" href="{{wa.boleto}}" target="_blank" rel="noopener">Continuar no WhatsApp</a>
@@ -995,25 +987,57 @@ a{color:inherit}
   window.addEventListener('resize',fit);
 })();
 (function(){
-  // formulário de análise -> WhatsApp da loja
+  // formulário de análise -> WhatsApp da loja (campos vêm do painel)
   var f=document.getElementById('an-form'); if(!f) return;
   var $=function(id){return document.getElementById(id)};
   var dg=function(s){return (s||'').replace(/\D/g,'')};
-  function mCPF(v){v=dg(v).slice(0,11);return v.replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2')}
-  function mZap(v){v=dg(v).slice(0,11);if(v.length<=2)return v.length?'('+v:v;if(v.length<=6)return '('+v.slice(0,2)+') '+v.slice(2);if(v.length<=10)return '('+v.slice(0,2)+') '+v.slice(2,6)+'-'+v.slice(6);return '('+v.slice(0,2)+') '+v.slice(2,3)+' '+v.slice(3,7)+'-'+v.slice(7)}
+  var M={
+    cpf:function(v){v=dg(v).slice(0,11);return v.replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d)/,'$1.$2').replace(/(\d{3})(\d{1,2})$/,'$1-$2')},
+    whatsapp:function(v){v=dg(v).slice(0,11);if(v.length<=2)return v.length?'('+v:v;if(v.length<=6)return '('+v.slice(0,2)+') '+v.slice(2);if(v.length<=10)return '('+v.slice(0,2)+') '+v.slice(2,6)+'-'+v.slice(6);return '('+v.slice(0,2)+') '+v.slice(2,3)+' '+v.slice(3,7)+'-'+v.slice(7)},
+    cep:function(v){v=dg(v).slice(0,8);return v.length>5?v.slice(0,5)+'-'+v.slice(5):v},
+    data:function(v){v=dg(v).slice(0,8);return v.replace(/(\d{2})(\d)/,'$1/$2').replace(/(\d{2})(\d)/,'$1/$2')}
+  };
   function cpfOk(c){c=dg(c);if(c.length!==11||/^(\d)\1{10}$/.test(c))return false;var s=0,i;for(i=0;i<9;i++)s+=+c[i]*(10-i);if((s*10)%11%10!==+c[9])return false;s=0;for(i=0;i<10;i++)s+=+c[i]*(11-i);return (s*10)%11%10===+c[10]}
-  function err(k,m){$('an-e-'+k).textContent=m||'';$('an-f-'+k).classList.toggle('bad',!!m)}
-  $('an-cpf').addEventListener('input',function(e){e.target.value=mCPF(e.target.value)});
-  $('an-zap').addEventListener('input',function(e){e.target.value=mZap(e.target.value)});
+  function dataOk(v){var m=v.match(/^(\d{2})\/(\d{2})\/(\d{4})$/);if(!m)return false;var d=new Date(+m[3],m[2]-1,+m[1]);return d.getDate()==+m[1]&&d.getMonth()==m[2]-1&&+m[3]>1900&&d<new Date()}
+  var C={ // conferência de cada tipo: devolve a mensagem de erro (ou '')
+    nome:function(v){return v.split(/\s+/).filter(Boolean).length<2?'Digite seu nome e sobrenome.':''},
+    cpf:function(v){return cpfOk(v)?'':'Confira o CPF: ele precisa ter 11 números válidos.'},
+    email:function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v)?'':'Digite um e-mail válido, por exemplo nome@gmail.com.'},
+    whatsapp:function(v){var z=dg(v);return z.length<10||z.length>11?'Digite o WhatsApp com DDD.':''},
+    cep:function(v){return dg(v).length===8?'':'Digite o CEP com 8 números.'},
+    data:function(v){return dataOk(v)?'':'Digite a data no formato 00/00/0000.'},
+    texto:function(){return ''}
+  };
+  var campos=[].slice.call(f.querySelectorAll('.an-field')).map(function(el){
+    var i=el.id.slice(5);
+    return {el:el,i:i,tipo:el.getAttribute('data-tipo'),msg:el.getAttribute('data-msg'),req:el.hasAttribute('data-req'),inp:$('an-'+i),cidade:''};
+  });
+  function err(c,m){$('an-e-'+c.i).textContent=m||'';c.el.classList.toggle('bad',!!m)}
+  campos.forEach(function(c){
+    var m=M[c.tipo]; if(m) c.inp.addEventListener('input',function(){c.inp.value=m(c.inp.value)});
+    if(c.tipo==='cep') c.inp.addEventListener('input',function(){ // mostra bairro/cidade (ViaCEP)
+      var z=dg(c.inp.value), info=$('an-i-'+c.i); c.cidade=''; info.textContent='';
+      if(z.length!==8||!window.fetch) return;
+      fetch('https://viacep.com.br/ws/'+z+'/json/').then(function(r){return r.json()}).then(function(d){
+        if(dg(c.inp.value)!==z) return;
+        if(d.erro){err(c,'CEP não encontrado. Confira os números.');return}
+        c.cidade=[d.logradouro,d.bairro,d.localidade&&d.localidade+(d.uf?'-'+d.uf:'')].filter(Boolean).join(', ');
+        info.textContent=c.cidade; err(c);
+      }).catch(function(){});
+    });
+  });
   f.addEventListener('submit',function(e){
     e.preventDefault();
-    var nome=$('an-nome').value.trim(), cpf=$('an-cpf').value, email=$('an-email').value.trim(), zap=$('an-zap').value, ok=true, z=dg(zap);
-    if(nome.split(/\s+/).filter(Boolean).length<2){err('nome','Digite seu nome e sobrenome.');ok=false}else err('nome');
-    if(!cpfOk(cpf)){err('cpf','Confira o CPF: ele precisa ter 11 números válidos.');ok=false}else err('cpf');
-    if(!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)){err('email','Digite um e-mail válido, por exemplo nome@gmail.com.');ok=false}else err('email');
-    if(z.length<10||z.length>11){err('zap','Digite o WhatsApp com DDD.');ok=false}else err('zap');
+    var ok=true, linhas=[];
+    campos.forEach(function(c){
+      var v=c.inp.value.trim(), m='';
+      if(!v){ if(c.req) m=c.tipo==='nome'?'Digite seu nome e sobrenome.':'Preencha este campo.'; }
+      else m=(C[c.tipo]||C.texto)(v);
+      err(c,m); if(m) ok=false;
+      if(v) linhas.push('*'+c.msg+':* '+v+(c.tipo==='cep'&&c.cidade?' ('+c.cidade+')':''));
+    });
     if(!ok){var b=f.querySelector('.an-field.bad input');if(b)b.focus();return}
-    var msg='Olá! Quero fazer a análise do *celular no boleto*.\n\n*Nome:* '+nome+'\n*CPF:* '+mCPF(cpf)+'\n*E-mail:* '+email+'\n*WhatsApp:* '+mZap(zap);
+    var msg=(f.getAttribute('data-msg')||'')+'\n\n'+linhas.join('\n');
     var a=$('an-wa'); a.href=f.getAttribute('data-wa')+'?text='+encodeURIComponent(msg);
     $('an-done').hidden=false; a.click();
   });

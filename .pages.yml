@@ -90,6 +90,77 @@ content:
         type: string
         list: true
 
+  - name: formulario
+    label: Formulário de análise (topo do site)
+    type: file
+    path: content/formulario.json
+    format: json
+    fields:
+      - name: titulo1
+        label: Título — linha branca
+        type: string
+        required: true
+        description: "Ex.: Celular"
+      - name: titulo2
+        label: Título — linha verde
+        type: string
+        required: true
+        description: "Ex.: no boleto"
+      - name: selo
+        label: Selo verde inclinado
+        type: string
+        description: "Ex.: Mesmo com nome sujo! Deixe vazio para esconder."
+      - name: campos
+        label: Campos do formulário
+        description: "Clique em \"Add\" para incluir um campo, arraste para mudar a ordem ou apague o que não quiser. Os campos aparecem dois por linha."
+        type: object
+        list:
+          min: 1
+          collapsible:
+            collapsed: true
+            summary: "{rotulo}"
+        fields:
+          - name: tipo
+            label: Tipo do campo
+            type: select
+            required: true
+            description: "Define a máscara e a conferência automática (ex.: CPF válido, CEP com 8 números)."
+            options:
+              values:
+                - { value: nome, label: "Nome (pede nome e sobrenome)" }
+                - { value: cpf, label: "CPF (confere se é válido)" }
+                - { value: email, label: "E-mail" }
+                - { value: whatsapp, label: "WhatsApp / telefone com DDD" }
+                - { value: cep, label: "CEP (mostra a cidade sozinho)" }
+                - { value: data, label: "Data de nascimento" }
+                - { value: texto, label: "Texto livre (ex.: Profissão, Renda)" }
+          - name: rotulo
+            label: Nome do campo
+            type: string
+            required: true
+            description: "Texto pequeno em cima da caixa. Ex.: CEP"
+          - name: placeholder
+            label: Exemplo dentro da caixa
+            type: string
+            description: "Ex.: 00000-000"
+          - name: obrigatorio
+            label: Obrigatório
+            type: boolean
+            default: true
+      - name: botao
+        label: Texto do botão
+        type: string
+        required: true
+        description: "Ex.: Fazer análise"
+      - name: aviso
+        label: Texto pequeno abaixo do botão
+        type: string
+      - name: mensagem
+        label: Primeira linha da mensagem no WhatsApp
+        type: string
+        required: true
+        description: "Os dados preenchidos vão logo abaixo. Use *asteriscos* para negrito."
+
   - name: acessorios
     label: Acessórios
     type: file
