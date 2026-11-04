@@ -53,6 +53,10 @@
       {
         "nome": "Parcelex",
         "url": "https://centrax.parcelex.com.br/link-de-pagamento?startDate=2026-09-20&endDate=2026-10-20&search=&active=false&status=ALL"
+      },
+      {
+        "nome": "PlayJoy",
+        "url": "https://app.payjoy.com/br/d2c?click_source=payjoysite"
       }
     ]
   }
