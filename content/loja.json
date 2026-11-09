@@ -8,28 +8,28 @@
   "horario": {
     "segunda": {
       "fechado": false,
-      "abre": "10:00",
-      "fecha": "20:00"
+      "abre": "8:00",
+      "fecha": "19:00"
     },
     "terca": {
       "fechado": false,
-      "abre": "10:00",
-      "fecha": "20:00"
+      "abre": "8:00",
+      "fecha": "19:00"
     },
     "quarta": {
       "fechado": false,
-      "abre": "10:00",
-      "fecha": "20:00"
+      "abre": "8:00",
+      "fecha": "19:00"
     },
     "quinta": {
       "fechado": false,
-      "abre": "10:00",
-      "fecha": "20:00"
+      "abre": "8:00",
+      "fecha": "19:00"
     },
     "sexta": {
       "fechado": false,
-      "abre": "10:00",
-      "fecha": "20:00"
+      "abre": "8:00",
+      "fecha": "19:00"
     },
     "sabado": {
       "fechado": false,
